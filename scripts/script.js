@@ -45,28 +45,6 @@ let corequisites = {
 	'se--495'   : ['se--494',],
 }
 
-
-/*
-for (let course in prerequisites) {
-//	console.log(typeof course);
-	let courseName = document.querySelector(`${course}`);
-	console.log(courseName);
-//	console.log(prerequisites[course].length);
-	if ( courseName.classList.contains(":hover") ) {
-		for (let i = 0; i < prerequisites[course].length; i++) {
-			course[i].classList.toggle(".prereqs");
-		}
-	}
-}
-*/
-
-/*
-for (let course in COURSES) {
-	let courseName = document.querySelector(course);
-	console.log(courseName);
-}
-*/
-
 function highlightClasses(event) {
 	highlightHovered(event);
 	highlightPrereqs(event);
@@ -145,42 +123,3 @@ console.log(container);
 
 container.addEventListener('mouseover', highlightClasses);
 container.addEventListener('mouseout', dehighlightClasses);
-
-
-/*
-container.addEventListener('mouseout', decreaseImportance);
-
-container.addEventListener('mouseover', highlightHovered);
-container.addEventListener('mouseout', highlightHovered);
-
-container.addEventListener('mouseover', highlightPrereqs);
-container.addEventListener('mouseout', highlightPrereqs);
-	
-container.addEventListener('mouseover', highlightCoreqs);
-container.addEventListener('mouseout', highlightCoreqs);
-	
-container.addEventListener('mouseover', highlightPreCoreqs);
-container.addEventListener('mouseout', highlightPreCoreqs);
-
-container.addEventListener('mouseover', decreaseImportance);
-*/
-
-/*
-
-const TAM251 = document.querySelector(".tam--251");
-console.log(TAM251);
-
-function hover(){
-	TAM251.classList.toggle("opacity-down");
-	let hovered = document.querySelector()
-}
-
-function activeState(trigger) {
-  trigger.classList.toggle('opacity-down');
-  target.classList.toggle('active');
-}
-
-TAM251.addEventListener("mouseenter", activeState(), false);
-TAM251.addEventListener("mouseleave", activeState(), false);
-
-*/
