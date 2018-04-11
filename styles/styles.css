@@ -7,7 +7,7 @@ html, body {
 	margin: 0;
 }
 
-li {
+.courses > li {
 	list-style-type: none;
 	width: 13.5rem;
 	height: 9rem;
@@ -19,6 +19,7 @@ li {
 	transition-property: opacity;
 	transition-duration: 0.35s;
 	box-sizing: border-box;
+	overflow: hidden; 
 }
 
 .center {
@@ -34,26 +35,53 @@ li {
 	grid-gap: 0.08rem;
 }
 
-.highlight {
-	background-color: #fa6300;
+.courses > .highlight {
+	background-image: linear-gradient(transparent, transparent 50%, #fa6300 50%, #fa6300);
+	background-position: 0 100%;
+	background-size: 100% 201%;
+	background-repeat: no-repeat;
+	transition-property: background-position;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in;
 }
 
-.prereq {
-	border-bottom-style: solid;
+.courses > .prereq {
+	background-image: linear-gradient(to right, #131f33, #131f33 50%, transparent 50%, transparent);
+	background-position: 0 100%;
+	background-size: 201% 10%;
+	background-repeat: no-repeat;
+	transition-property: background-position;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+/*	border-bottom-style: solid;
 	border-width: 0.65rem;;
-	border-color: #131f33;
+	border-color: #131f33; */
 }
 
-.coreq {
-	border-bottom-style: solid;
+.courses > .coreq {
+	background-image: linear-gradient(to right, #fa6300, #fa6300 50%, transparent 50%, transparent);
+	background-position: 0 100%;
+	background-size: 201% 10%;
+	background-repeat: no-repeat;
+	transition-property: background-position;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+/*	border-bottom-style: solid;
 	border-width: 0.65rem;;
-	border-color: #fa6300;
+	border-color: #fa6300; */
 }
 
-.precoreq {
-	border-bottom-style: solid;
+.courses > .precoreq {
+	background-image: linear-gradient(to right, #bfd46d, #bfd46d 50%, transparent 50%, transparent);
+	background-position: 0 100%;
+	background-size: 201% 10%;
+	background-repeat: no-repeat;
+	transition-property: background-position;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+/*	border-bottom-style: solid;
 	border-width: 0.65rem;;
-	border-color: #0455a4;
+	border-color: #0455a4; */
 }
 
 .opacity-down {

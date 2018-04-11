@@ -1,7 +1,6 @@
 'use strict'; // JavaScript Document
 
 const COURSES = document.querySelectorAll("li");
-console.log(COURSES);
 
 let prerequisites = {
 	'math--231' : ['math--221',],
@@ -119,7 +118,6 @@ function decreaseImportance(event) {
 }
 
 let container = document.querySelector('.courses');
-console.log(container);
 
 container.addEventListener('mouseover', highlightClasses);
 container.addEventListener('mouseout', dehighlightClasses);
