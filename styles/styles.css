@@ -11,7 +11,6 @@ html, body {
 h1 {
 	font-family: 'PT Sans', sans-serif;
 	font-size: 3.5rem;
-
 }
 
 .courses > li {
@@ -45,8 +44,10 @@ h1 {
 .curriculum-grid {
 	display: grid;
 	grid-template-columns: 1fr 6fr 1fr;
+	grid-teplate-rows: 5fr 2fr;
 	grid-template-areas: 
-		'side1 courses side2';
+		'side1 courses .'
+		'. info .';
 }
 
 .courses > h2 {
@@ -138,6 +139,17 @@ h1 {
 .opacity-down {
 	opacity: 0.2;
 
+}
+
+.course-info {
+	grid-area: info;
+	background-color: #a5a8aa;
+	margin: 0 0 10rem 4rem;
+	height: 20rem;
+}
+
+.hidden {
+	display: none;
 }
 
 .grid-title {
