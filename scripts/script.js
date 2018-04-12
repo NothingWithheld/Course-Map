@@ -6,6 +6,8 @@ let container = document.querySelector('.courses');
 container.addEventListener('mouseover', highlightClasses);
 container.addEventListener('mouseout', dehighlightClasses);
 container.addEventListener('click', clickClass);
+container.addEventListener('mouseover', displayInfoDiv);
+document.querySelector('footer').addEventListener('mouseover', hideInfoDiv);
 
 let prerequisites = {
 	'math--231' : ['math--221',],
@@ -47,6 +49,14 @@ let corequisites = {
 	'se--312'   : ['se--311',],
 	'se--494'   : ['se--495',],
 	'se--495'   : ['se--494',],
+}
+
+function displayInfoDiv() {
+	document.getElementById('course-info').classList.remove('hidden');
+}
+
+function hideInfoDiv() {
+	document.getElementById('course-info').classList.add('hidden');
 }
 
 function resetHold(event) {

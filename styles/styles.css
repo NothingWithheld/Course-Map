@@ -138,18 +138,24 @@ h1 {
 
 .opacity-down {
 	opacity: 0.2;
-
 }
 
-.course-info {
+#course-info {
 	grid-area: info;
 	background-color: #a5a8aa;
-	margin: 0 0 10rem 4rem;
+	margin: 0 0 0 4rem;
 	height: 20rem;
+	transition-property: height;
+	transition-duration: 1s;
+	transition-timing-function: ease-in-out;
 }
 
 .hidden {
-	display: none;
+	height: 0rem !important;
+}
+
+footer {
+	height: 20rem;
 }
 
 .grid-title {
