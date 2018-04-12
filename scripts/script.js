@@ -56,14 +56,14 @@ function resetHold(event) {
 		container.addEventListener('mouseover', highlightClasses);
 		container.addEventListener('mouseover', addMouseout);
 		container.removeEventListener('click', resetHold);
-//		container.addEventListener('click', highlightClick);
+		container.addEventListener('click', highlightClick);
 	}
 }
 
 function addMouseout(event) {
 	container.addEventListener('mouseout', dehighlightClasses);
 	container.removeEventListener('mouseover', addMouseout);
-//	container.removeEventListener('click', highlightClick);
+	container.removeEventListener('click', highlightClick);
 }
 
 function clickClass(event) {
@@ -76,15 +76,14 @@ function clickClass(event) {
 	container.addEventListener('click', resetHold);	
 }
 
-/*
 function highlightClick(event) {
 	let target = event.target.closest('li');
 	if (!target) return;
 	if ( !container.contains(target) ) return;
 	highlightClasses(event);
-	container.addEventListener('mouseout', dehighlightClasses);
+	container.removeEventListener('mouseover', addMouseout);
+	container.removeEventListener('click', highlightClick);
 }
-*/
 
 function clickClassAgain(event) {
 	let target = event.target.closest('li');
