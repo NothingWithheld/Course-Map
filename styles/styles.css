@@ -11,7 +11,7 @@ html, body {
 h1 {
 	font-family: 'PT Sans', sans-serif;
 	font-size: 3.5rem;
-	margin-left: 16%;
+
 }
 
 .courses > li {
@@ -42,19 +42,46 @@ h1 {
 	font-family: 'PT Sans', sans-serif;
 }
 
-.center {
-	display: flex;
-	justify-content: center;
+.curriculum-grid {
+	display: grid;
+	grid-template-columns: 1fr 6fr 1fr;
+	grid-template-areas: 
+		'side1 courses side2';
+}
+
+.courses > h2 {
+	background-color: #fa6300;
+	margin: 0;
+	padding: 0.5rem 0 0 1rem;
+	font-size: 1.6rem;
+}
+
+.courses > h3 {
+	background-color: #fa6300;
+	margin: 0;
+	padding: 0.2rem 0 0 1rem;
+	font-size: 1.2rem;
 }
 
 .courses {
 	display: grid;
-	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: repeat(7, 1fr);
-	margin: 0;
+	grid-template-columns: 4fr 4fr 1fr 4fr 4fr 1fr 4fr 4fr 1fr 4fr 4fr;
+	grid-template-rows: 6fr 2fr 1.5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr;
 	grid-gap: 0.08rem;
+	grid-template-areas: 
+		'title title title title title title title title title title title'
+		'fresh fresh . soph soph . junior junior . senior senior'
+		'fall1 spring1 . fall2 spring2 . fall3 spring3 . fall4 spring4'
+		'math221 math231 . math241 math285 . math415 ie310 . sfo2 sfo3'
+		'chem102 phys211 . phys212 phys213 . sfo1 se311 . engsci elec1'
+		'chem103 cs101 . tam211 ie300 . se310 se312 . des elec2'
+		'eng100 ece110 . se261 tam251 . se320 se424 . se494 sfo4'
+		'se100 . . lee2 tam212 . ece211 tam335 . se495 lee6'
+		'rhet105 se101 . . se290 . . lee4 . lee5 .'
+		'lee1 . . . lee3 . . . . . .';
+	grid-area: courses;
 }
-
+	
 .courses > .highlight {
 	background-image: linear-gradient(transparent, transparent 50%, #fa6300 50%, #fa6300);
 	background-position: 0 100%;
@@ -113,231 +140,238 @@ h1 {
 
 }
 
-.chem--102 {
-	grid-column: 1/2;
-	grid-row: 2/3;
+.grid-title {
+	grid-area: title;
 }
 
-.chem--103 {
-	grid-column: 1/2;
-	grid-row: 3/4;
+.freshman {
+	grid-area: fresh;
 }
 
-.cs--101 {
-	grid-column: 2/3;
-	grid-row: 3/4;
+.sophomore {
+	grid-area: soph;
 }
 
-.design-elective {
-	grid-column: 7/8;
-	grid-row: 3/4;
+.junior {
+	grid-area: junior;
 }
 
-.ece--110 {
-	grid-column: 2/3;
-	grid-row: 4/5;
+.senior {
+	grid-area: senior;
 }
 
-.ece--211 {
-	grid-column: 5/6;
-	grid-row: 5/6;
-}
-.eng--100 {
-	grid-column: 1/2;
-	grid-row: 4/5;
+.fall--1 {
+	grid-area: fall1;
 }
 
-.engineering-science-elective {
-	grid-column: 7/8;
-	grid-row: 2/3;
+.fall--2 {
+	grid-area: fall2;
 }
 
-.free-elective--1 {
-	grid-column: 8/9;
-	grid-row: 2/3;
+.fall--3 {
+	grid-area: fall3;
 }
 
-.free-elective--2 {
-	grid-column: 8/9;
-	grid-row: 3/4;
+.fall--4 {
+	grid-area: fall4;
 }
 
-.ie--300 {
-	grid-column: 4/5;
-	grid-row: 3/4;
+.spring--1 {
+	grid-area: spring1;
 }
 
-.ie--310 {
-	grid-column: 6/7;
-	grid-row: 1/2;
+.spring--2 {
+	grid-area: spring2;
 }
 
-.lee--1 {
-	grid-column: 1/2;
-	grid-row: 7/8;
+.spring--3 {
+	grid-area: spring3;
 }
 
-.lee--2 {
-	grid-column: 3/4;
-	grid-row: 5/6;
-}
-
-.lee--3 {
-	grid-column: 4/5;
-	grid-row: 7/8;
-}
-
-.lee--4 {
-	grid-column: 6/7;
-	grid-row: 6/7;
-}
-
-.lee--5 {
-	grid-column: 7/8;
-	grid-row: 6/7;
-}
-
-.lee--6 {
-	grid-column: 8/9;
-	grid-row: 5/6;
+.spring--4 {
+	grid-area: spring4;
 }
 
 .math--221 {
-	grid-column: 1/2;
-	grid-row: 1/2;
+	grid-area: math221;
 }
 
 .math--231 {
-	grid-column: 2/3;
-	grid-row: 1/2;
+	grid-area: math231;
 }
 
 .math--241 {
-	grid-column: 3/4;
-	grid-row: 1/2;
+	grid-area: math241;
 }
 
 .math--285 {
-	grid-column: 4/5;
-	grid-row: 1/2;
+	grid-area: math285;
 }
 
 .math--415 {
-	grid-column: 5/6;
-	grid-row: 1/2;
+	grid-area: math415;
+}
+
+.chem--102 {
+	grid-area: chem102;
+}
+
+.chem--103 {
+	grid-area: chem103;
 }
 
 .phys--211 {
-	grid-column: 2/3;
-	grid-row: 2/3;
+	grid-area: phys211;
 }
 
 .phys--212 {
-	grid-column: 3/4;
-	grid-row: 2/3;
+	grid-area: phys212;
 }
 
 .phys--213 {
-	grid-column: 4/5;
-	grid-row: 2/3;
+	grid-area: phys213;
 }
 
-.rhet--105 {
-	grid-column: 1/2;
-	grid-row: 6/7;
+.cs--101 {
+	grid-area: cs101;
+}
+
+.eng--100 {
+	grid-area: eng100;
+}
+
+.ece--110 {
+	grid-area: ece110;
+}
+
+.ece--211 {
+	grid-area: ece211;
 }
 
 .se--100 {
-	grid-column: 1/2;
-	grid-row: 5/6;
+	grid-area: se100;
 }
 
 .se--101 {
-	grid-column: 2/3;
-	grid-row: 6/7;
+	grid-area: se101;
 }
 
 .se--261 {
-	grid-column: 3/4;
-	grid-row: 4/5;
+	grid-area: se261;
 }
 
 .se--290 {
-	grid-column: 4/5;
-	grid-row: 6/7;
+	grid-area: se290;
 }
 
 .se--310 {
-	grid-column: 5/6;
-	grid-row: 3/4;
+	grid-area: se310;
 }
 
 .se--311 {
-	grid-column: 6/7;
-	grid-row: 2/3;
+	grid-area: se311;
 }
 
 .se--312 {
-	grid-column: 6/7;
-	grid-row: 3/4;
+	grid-area: se312;
 }
 
 .se--320 {
-	grid-column: 5/6;
-	grid-row: 4/5;
+	grid-area: se320;
 }
 
 .se--424 {
-	grid-column: 6/7;
-	grid-row: 4/5;
+	grid-area: se424;
 }
 
 .se--494 {
-	grid-column: 7/8;
-	grid-row: 4/5;
+	grid-area: se494;
 }
 
 .se--495 {
-	grid-column: 7/8;
-	grid-row: 5/6;
-}
-
-.sfo--1 {
-	grid-column: 5/6;
-	grid-row: 2/3;
-}
-
-.sfo--2 {
-	grid-column: 7/8;
-	grid-row: 1/2;
-}
-
-.sfo--3 {
-	grid-column: 8/9;
-	grid-row: 1/2;
-}
-
-.sfo--4 {
-	grid-column: 8/9;
-	grid-row: 4/5;
+	grid-area: se495;
 }
 
 .tam--211 {
-	grid-column: 3/4;
-	grid-row: 3/4;
+	grid-area: tam211;
 }
 
 .tam--212 {
-	grid-column: 4/5;
-	grid-row: 4/5;
+	grid-area: tam212;
 }
 
 .tam--251 {
-	grid-column: 4/5;
-	grid-row: 5/6;
+	grid-area: tam251;
 }
 
 .tam--335 {
-	grid-column: 6/7;
-	grid-row: 5/6;
+	grid-area: tam335;
+}
+
+.ie--300 {
+	grid-area: ie300;
+}
+
+.ie--310 {
+	grid-area: ie310;
+}
+
+.rhet--105 {
+	grid-area: rhet105;
+}
+
+.lee--1 {
+	grid-area: lee1;
+}
+
+.lee--2 {
+	grid-area: lee2;
+}
+
+.lee--3 {
+	grid-area: lee3;
+}
+
+.lee--4 {
+	grid-area: lee4;
+}
+
+.lee--5 {
+	grid-area: lee5;
+}
+
+.lee--6 {
+	grid-area: lee6;
+}
+
+.sfo--1 {
+	grid-area: sfo1;
+}
+
+.sfo--2 {
+	grid-area: sfo2;
+}
+
+.sfo--3 {
+	grid-area: sfo3;
+}
+
+.sfo--4 {
+	grid-area: sfo4;
+}
+
+.design-elective {
+	grid-area: des;
+}
+
+.engineering-science-elective {
+	grid-area: engsci;
+}
+
+.free-elective--1 {
+	grid-area: elec1;
+}
+
+.free-elective--2 {
+	grid-area: elec2;
 }
