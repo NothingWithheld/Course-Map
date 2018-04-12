@@ -1,6 +1,11 @@
 'use strict'; // JavaScript Document
 
 const COURSES = document.querySelectorAll("li");
+let container = document.querySelector('.courses');
+
+container.addEventListener('mouseover', highlightClasses);
+container.addEventListener('mouseout', dehighlightClasses);
+container.addEventListener('click', clickClass);
 
 let prerequisites = {
 	'math--231' : ['math--221',],
@@ -42,6 +47,53 @@ let corequisites = {
 	'se--312'   : ['se--311',],
 	'se--494'   : ['se--495',],
 	'se--495'   : ['se--494',],
+}
+
+function resetHold(event) {
+	for (let i = 0; i < COURSES.length; i++) {
+		COURSES[i].classList.toggle( COURSES[i].classList[1] );
+//		container.addEventListener('click', clickClass);
+		container.addEventListener('mouseover', highlightClasses);
+		container.addEventListener('mouseover', addMouseout);
+		container.removeEventListener('click', resetHold);
+//		container.addEventListener('click', highlightClick);
+	}
+}
+
+function addMouseout(event) {
+	container.addEventListener('mouseout', dehighlightClasses);
+	container.removeEventListener('mouseover', addMouseout);
+//	container.removeEventListener('click', highlightClick);
+}
+
+function clickClass(event) {
+	let target = event.target.closest('li');
+	if (!target) return;
+	if ( !container.contains(target) ) return;
+	container.removeEventListener('mouseout', dehighlightClasses);
+	container.removeEventListener('mouseover', highlightClasses);
+//	container.removeEventListener('click', clickClass);	
+	container.addEventListener('click', resetHold);	
+}
+
+/*
+function highlightClick(event) {
+	let target = event.target.closest('li');
+	if (!target) return;
+	if ( !container.contains(target) ) return;
+	highlightClasses(event);
+	container.addEventListener('mouseout', dehighlightClasses);
+}
+*/
+
+function clickClassAgain(event) {
+	let target = event.target.closest('li');
+	if (!target) return;
+	if ( !container.contains(target) ) return;
+	container.removeEventListener('click', clickClassAgain);	
+	container.addEventListener('click', clickClass);
+	container.addEventListener('mouseout', dehighlightClasses);
+	container.addEventListener('mouseover', highlightClasses);
 }
 
 function highlightClasses(event) {
@@ -116,8 +168,3 @@ function decreaseImportance(event) {
 		}
 	}
 }
-
-let container = document.querySelector('.courses');
-
-container.addEventListener('mouseover', highlightClasses);
-container.addEventListener('mouseout', dehighlightClasses);
