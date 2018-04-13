@@ -180,6 +180,10 @@ h1 {
 	margin: 0;
 }
 
+#course-info > p > br {
+	line-height: 2.5;
+}
+
 .hidden {
 	height: 0 !important;
 }
