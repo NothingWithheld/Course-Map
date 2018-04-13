@@ -11,6 +11,7 @@ html, body {
 h1 {
 	font-family: 'PT Sans', sans-serif;
 	font-size: 3.5rem;
+	margin-left: 4rem;
 }
 
 .courses > li {
@@ -44,8 +45,9 @@ h1 {
 .curriculum-grid {
 	display: grid;
 	grid-template-columns: 1fr 6fr 1fr;
-	grid-teplate-rows: 5fr 2fr;
+	grid-teplate-rows: 1.5fr 5fr 2fr;
 	grid-template-areas: 
+		'. title title'
 		'side1 courses .'
 		'. info .';
 }
@@ -67,10 +69,9 @@ h1 {
 .courses {
 	display: grid;
 	grid-template-columns: 4fr 4fr 1fr 4fr 4fr 1fr 4fr 4fr 1fr 4fr 4fr;
-	grid-template-rows: 6fr 2fr 1.5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr;
+	grid-template-rows: 2fr 1.5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr;
 	grid-gap: 0.08rem;
 	grid-template-areas: 
-		'title title title title title title title title title title title'
 		'fresh fresh . soph soph . junior junior . senior senior'
 		'fall1 spring1 . fall2 spring2 . fall3 spring3 . fall4 spring4'
 		'math221 math231 . math241 math285 . math415 ie310 . sfo2 sfo3'
@@ -144,14 +145,43 @@ h1 {
 	grid-area: info;
 	background-color: #a5a8aa;
 	margin: 0 0 0 4rem;
-	height: 20rem;
+	height: 25rem;
 	transition-property: height;
 	transition-duration: 1s;
 	transition-timing-function: ease-in-out;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 3fr;
+	grid-template-areas:
+		'course links'
+		'descrip descrip';
+}
+
+#course-info > h2 {
+	font-size: 2.4rem;
+	padding: 0.6rem 6.4rem 0;
+	grid-area: course;
+}
+
+#course-info > a {
+	grid-area: links;
+	font-size: 1.2rem;
+	font-style: italic;
+	line-height: 1.75;
+	text-align: right;
+	padding: 1rem 1.8rem;
+}
+
+#course-info > p {
+	grid-area: descrip;
+	font-size: 1.4rem;
+	padding: 0 2.4rem;
+	line-height: 1.5;
+	margin: 0;
 }
 
 .hidden {
-	height: 0rem !important;
+	height: 0 !important;
 }
 
 footer {
