@@ -117,13 +117,27 @@ function removeCourseInfo(event) {
 	let target = event.target.closest('li');
 	if (!target) return;
 	if ( !container.contains(target) ) return;
-	let courseName = target.classList[0];
-	let infoh2 = infoDiv.querySelector('h2');
-	let infop = infoDiv.querySelector('p');
-	let infoa = infoDiv.querySelector('a');
-	infoh2.remove();
-	infop.remove();
-	infoa.remove();
+	if ( infoDiv.querySelector('h2') != null ) {
+		infoDiv.querySelector('h2').remove();
+	}
+	if ( infoDiv.querySelector('p') != null ) {
+		infoDiv.querySelector('p').remove();
+	}
+	if ( infoDiv.querySelector('a') != null ) {
+		infoDiv.querySelector('a').remove();
+	}
+}
+
+function deleteCourseInfo() {
+	if ( infoDiv.querySelector('h2') != null ) {
+		infoDiv.querySelector('h2').remove();
+	}
+	if ( infoDiv.querySelector('p') != null ) {
+		infoDiv.querySelector('p').remove();
+	}
+	if ( infoDiv.querySelector('a') != null ) {
+		infoDiv.querySelector('a').remove();
+	}
 }
 
 function showCourseAssests() {
@@ -169,6 +183,7 @@ function addMouseout(event) {
 	container.addEventListener('mouseout', dehighlightClasses);
 	container.removeEventListener('mouseover', addMouseout);
 	container.removeEventListener('click', highlightClick);
+	deleteCourseInfo();
 }
 
 function clickClass(event) {
