@@ -159,8 +159,6 @@ h1 {
 	font-style: italic;
 }
 
-#key-map > div {}
-
 #key-prereq {
 	display: grid;
 	grid-template-areas:
@@ -177,6 +175,17 @@ h1 {
 	border-color: #131f33;
 	border-bottom-width: 1rem;
 	grid-area: square;
+	margin: 0.5rem;
+}
+
+#key-prereq > b {
+	grid-area: type;
+	margin-bottom: -1rem;
+}
+
+#key-prereq > p {
+	grid-area: descrip;
+	padding-right: 0.5rem;
 }
 
 #key-credit {
@@ -195,6 +204,17 @@ h1 {
 	border-color: #bfd46d;
 	border-bottom-width: 1rem;
 	grid-area: square;
+	margin: 0.5rem;
+}
+
+#key-credit > b {
+	grid-area: type;
+	margin-bottom: -1rem;
+}
+
+#key-credit > p {
+	grid-area: descrip;
+	padding-right: 0.5rem;
 }
 
 #key-coreq {
@@ -213,13 +233,24 @@ h1 {
 	border-color: #fa6300;
 	border-bottom-width: 1rem;
 	grid-area: square;
+	margin: 0.5rem;
+}
+
+#key-coreq > b {
+	grid-area: type;
+	margin-bottom: -1rem;
+}
+
+#key-coreq > p {
+	grid-area: descrip;
+	padding-right: 0.5rem;
 }
 
 #course-info {
 	grid-area: info;
 	background-color: #a5a8aa;
 	margin: 0 0 0 4rem;
-	height: 25rem;
+	height: 30rem;
 	transition-property: height;
 	transition-duration: 1s;
 	transition-timing-function: ease-in-out;
