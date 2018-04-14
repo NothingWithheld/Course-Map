@@ -48,7 +48,7 @@ h1 {
 	grid-teplate-rows: 1.5fr 5fr 2fr;
 	grid-template-areas: 
 		'. title title'
-		'side1 courses .'
+		'key courses .'
 		'. info .';
 }
 
@@ -141,6 +141,80 @@ h1 {
 	opacity: 0.2;
 }
 
+#key-map {
+	grid-area: key;
+	font-size: 1.6rem;
+	background-color: #e8e9ea;
+	margin: 8rem -2rem 0 2rem;
+}
+
+#key-class {
+	background-color: #a5a8aa;
+	margin: 3rem 1rem;
+	padding: 0.5rem;
+}
+
+#key-map p {
+	font-size: 1.2rem;
+	font-style: italic;
+}
+
+#key-map > div {}
+
+#key-prereq {
+	display: grid;
+	grid-template-areas:
+		'square type'
+		'square descrip';	
+}
+
+#key-prereq > div {
+	height: 3rem;
+	width: 3rem;
+	background-color: #a5a8aa;
+	box-sizing: border-box;
+	border-bottom-style: solid;
+	border-color: #131f33;
+	border-bottom-width: 1rem;
+	grid-area: square;
+}
+
+#key-credit {
+	display: grid;
+	grid-template-areas:
+		'square type'
+		'square descrip';
+}
+
+#key-credit > div {
+	height: 3rem;
+	width: 3rem;
+	background-color: #a5a8aa;
+	box-sizing: border-box;
+	border-bottom-style: solid;
+	border-color: #bfd46d;
+	border-bottom-width: 1rem;
+	grid-area: square;
+}
+
+#key-coreq {
+	display: grid;
+	grid-template-areas:
+		'square type'
+		'square descrip';
+}
+
+#key-coreq > div {
+	height: 3rem;
+	width: 3rem;
+	background-color: #a5a8aa;
+	box-sizing: border-box;
+	border-bottom-style: solid;
+	border-color: #fa6300;
+	border-bottom-width: 1rem;
+	grid-area: square;
+}
+
 #course-info {
 	grid-area: info;
 	background-color: #a5a8aa;
@@ -170,6 +244,7 @@ h1 {
 	line-height: 1.75;
 	text-align: right;
 	padding: 1rem 1.8rem;
+	text-decoration: underline;
 }
 
 #course-info > p {
