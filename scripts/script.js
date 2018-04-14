@@ -7,7 +7,7 @@ const infoDiv = document.getElementById('course-info');
 container.addEventListener('mouseover', highlightClasses);
 container.addEventListener('mouseout', dehighlightClasses);
 container.addEventListener('click', clickClass);
-container.addEventListener('mouseover', displayInfoDiv);
+container.addEventListener('mouseover', showInfoDiv);
 container.addEventListener('mouseover', insertCourseInfo);
 container.addEventListener('mouseout', removeCourseInfo);
 document.querySelector('footer').addEventListener('mouseover', hideInfoDiv);
@@ -126,12 +126,30 @@ function removeCourseInfo(event) {
 	infoa.remove();
 }
 
-function displayInfoDiv() {
+function showCourseAssests() {
+	showInfoDiv();
+	showCourseKey();
+}
+
+function hideCourseAssessts() {
+	hideInfoDiv();
+	hideCourseKey();
+}
+
+function showInfoDiv() {
 	infoDiv.classList.remove('hidden');
 }
 
 function hideInfoDiv() {
 	infoDiv.classList.add('hidden');
+}
+
+function showCourseKey() {
+	document.getElementById('key-map').classList.remove('hidden');
+}
+
+function hideCourseKey() {
+	document.getElementById('key-map').classList.add('hidden');
 }
 
 function resetHold(event) {
