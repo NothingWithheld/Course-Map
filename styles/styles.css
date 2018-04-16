@@ -57,21 +57,21 @@ h1 {
 .courses > h2 {
 	background-color: #fa6300;
 	margin: 0;
-	padding: 0.5rem 0 0 1rem;
+	padding: 0.75rem 1rem;
 	font-size: 1.6rem;
 }
 
 .courses > h3 {
 	background-color: #fa6300;
 	margin: 0;
-	padding: 0.2rem 0 0 1rem;
+	padding: 0.5rem;
 	font-size: 1.2rem;
 }
 
 .courses {
 	display: grid;
-	grid-template-columns: 4fr 4fr 1fr 4fr 4fr 1fr 4fr 4fr 1fr 4fr 4fr;
-	grid-template-rows: 2fr 1.5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr;
+	grid-template-columns: 1fr 1fr minmax(auto, 1em) 1fr 1fr minmax(auto, 1em) 1fr 1fr minmax(auto, 1em) 1fr 1fr;
+	grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-gap: 0.08rem;
 	grid-template-areas: 
 		'fresh fresh . soph soph . junior junior . senior senior'
