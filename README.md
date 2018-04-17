@@ -1,6 +1,6 @@
 # Course-Map
 
-![mockup of the curriculum map](https://github.com/NothingWithheld/Course-Map/blob/master/SED_mockup.pdf)
+![mockup of the curriculum map](https://github.com/NothingWithheld/Course-Map/blob/master/assets/SED_mockup.png)
 
 Plan out your future semesters with ease and delight by running your cursor back and forth over the courses.
 
