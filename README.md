@@ -12,4 +12,4 @@ Features include:
 * Course info displayed in page
 * Focusing selections on click
 
-Play with it: [project pages link to try the map out for yourself](https://nothingwithheld.github.io/Course-Map/)
+Play with it: [bless project pages](https://nothingwithheld.github.io/Course-Map/)
