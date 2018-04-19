@@ -584,13 +584,13 @@ footer a {
 @media only screen and (max-width: 1075px) {
 	
 	.curriculum-grid {
-		grid-template-columns: 1fr minmax(auto, 100rem) 1fr;
-		grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) 1fr minmax(min-content, auto);
-		grid-template-areas: 
-			'. title title'
-			'. key .'
-			'. courses .'
-			'. info .';
+	grid-template-columns: 1fr minmax(auto, 100rem) 1fr;
+	grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) 1fr minmax(min-content, auto);
+	grid-template-areas: 
+		'. title title'
+		'. key .'
+		'. courses .'
+		'. info .';
 	}
 	
 	#key-map {
@@ -601,52 +601,75 @@ footer a {
 	}
 	
 	.courses > li {
-		min-width: 11rem;
-		min-height: 7rem;
+	min-width: 11rem;
+	min-height: 7rem;
 	}
 	
 	.courses > h2 {
-		padding: 0.5rem 1rem;
-		font-size: 1.6rem;
+	padding: 0.5rem 1rem;
+	font-size: 1.6rem;
 	}
 
 	.courses > h3 {
-		padding: 0.5rem;
-		font-size: 1rem;
+	padding: 0.5rem;
+	font-size: 1rem;
 	}
 	
 	#key-map p {
-		font-size: 1.2rem;
+	font-size: 1.2rem;
 	}
 	
 	#key-class {
-		max-width: 20rem;
-		margin: 0;
+	max-width: 20rem;
+	margin: 0;
+	}
+	
+	#key-prereq {
+		margin: 1rem;
+	}
+	
+	#key-prereq > div {
+		margin: auto;
 	}
 
-
 	#key-prereq > b {
-		margin: 0;
+	margin: auto auto 0.75rem 0.5rem;
 	}
 
 	#key-prereq > p {
-		margin: 0;
+	margin: -0.5rem auto auto 0.5rem;
+	}
+	
+	#key-credit {
+		margin: 1rem;
+	}
+	
+	#key-credit > div {
+		margin: auto;
 	}
 
 	#key-credit > b {
-		margin: 0;
+	margin: auto auto 0.75rem 0.5rem;
 	}
 
 	#key-credit > p {
-		margin: 0;
+	margin: -0.5rem auto auto 0.5rem;
+	}
+	
+	#key-coreq {
+		margin: 1rem;
+	}
+	
+	#key-coreq > div {
+		margin: auto;
 	}
 
 	#key-coreq > b {
-		margin: 0;
+	margin: auto auto 0.75rem 0.5rem;
 	}
 
 	#key-coreq > p {
-		margin: 0;
+	margin: -0.5rem auto auto 0.5rem;
 	}
 	
 }
