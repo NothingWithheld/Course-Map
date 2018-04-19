@@ -49,7 +49,7 @@ h1 {
 .curriculum-grid {
 	display: grid;
 	grid-template-columns: minmax(min-content, 1fr) minmax(auto, 125rem) 1fr;
-	grid-teplate-rows: minmax(min-content, auto) 1fr minmax(min-content, auto);
+	grid-template-rows: minmax(min-content, auto) 1fr minmax(min-content, auto);
 	grid-template-areas: 
 		'. title title'
 		'key courses .'
@@ -57,14 +57,14 @@ h1 {
 }
 
 .courses > h2 {
-	background-color: #fa6300;
+	background-color: #e84a27;
 	margin: 0;
 	padding: 0.5rem 1rem;
 	font-size: 1.6rem;
 }
 
 .courses > h3 {
-	background-color: #fa6300;
+	background-color: #e84a27;
 	margin: 0;
 	padding: 0.5rem;
 	font-size: 1.2rem;
@@ -86,10 +86,11 @@ h1 {
 		'rhet105 se101 . . se290 . . lee4 . lee5 .'
 		'lee1 . . . lee3 . . . . . .';
 	grid-area: courses;
+	-webkit-padding-start: 0;
 }
 	
 .courses > .highlight {
-	background-image: linear-gradient(transparent, transparent 50%, #fa6300 50%, #fa6300);
+	background-image: linear-gradient(transparent, transparent 50%, #e84a27 50%, #e84a27);
 	background-position: 0 100%;
 	background-size: 100% 201%;
 	background-repeat: no-repeat;
@@ -106,7 +107,7 @@ h1 {
 }
 
 .courses > .prereq {
-	background-image: linear-gradient(to right, #131f33, #131f33 50%, transparent 50%, transparent);
+	background-image: linear-gradient(to right, #13294b, #13294b 50%, transparent 50%, transparent);
 	background-position: 0 100%;
 	background-size: 201% 10%;
 	background-repeat: no-repeat;
@@ -118,7 +119,7 @@ h1 {
 }
 
 .courses > .coreq {
-	background-image: linear-gradient(to right, #fa6300, #fa6300 50%, transparent 50%, transparent);
+	background-image: linear-gradient(to right, #e84a27, #e84a27 50%, transparent 50%, transparent);
 	background-position: 0 100%;
 	background-size: 201% 10%;
 	background-repeat: no-repeat;
@@ -148,7 +149,7 @@ h1 {
 #key-map {
 	grid-area: key;
 	font-size: 1.6rem;
-	margin: 8rem -3rem 0 auto;
+	margin: 8rem auto 0 auto;
 	max-height: max-content;
 	width: 20rem;
 }
@@ -179,7 +180,7 @@ h1 {
 	background-color: #a5a8aa;
 	box-sizing: border-box;
 	border-bottom-style: solid;
-	border-color: #131f33;
+	border-color: #13294b;
 	border-bottom-width: 1rem;
 	grid-area: square;
 	margin: 0.5rem;
@@ -218,6 +219,7 @@ h1 {
 #key-credit > b {
 	grid-area: type;
 	margin-bottom: -1rem;
+	word-wrap: break-word;
 }
 
 #key-credit > p {
@@ -239,7 +241,7 @@ h1 {
 	background-color: #a5a8aa;
 	box-sizing: border-box;
 	border-bottom-style: solid;
-	border-color: #fa6300;
+	border-color: #e84a27;
 	border-bottom-width: 1rem;
 	grid-area: square;
 	margin: 0.5rem;
@@ -258,7 +260,6 @@ h1 {
 #course-info {
 	grid-area: info;
 	background-color: #a5a8aa;
-	margin: 0 0 0 4rem;
 	height: 30rem;
 	transition-property: height;
 	transition-duration: 2s;
@@ -305,15 +306,14 @@ h1 {
 }
 
 footer {
-	height: 20rem;
+	height: 30rem;
 	background-color: black;
 	color: white;
-	font-size: 5rem;
+	font-size: 3rem;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	text-align: center;
-	margin: 1rem 0 0;
+	margin: 0;
+	padding: 0 10rem;
 }
 
 footer a {
@@ -554,4 +554,138 @@ footer a {
 
 .free-elective--2 {
 	grid-area: elec2;
+}
+
+@media only screen and (max-width: 768px) {
+	
+	.courses > li {
+		min-width: 8rem;
+		min-height: 6rem;
+	}
+	
+	.courses > h3 {
+		padding: 0;
+		font-size: 1rem;
+	}
+	
+	#key-map {
+		font-size: 1.2rem;
+		margin: 8rem -3rem 0 auto;
+		max-height: max-content;
+		width: 15rem;
+	}
+	
+	#key-map p {
+		font-size: 1rem;
+	}
+	
+}
+
+@media only screen and (max-width: 1075px) {
+	
+	.curriculum-grid {
+		grid-template-columns: 1fr minmax(auto, 100rem) 1fr;
+		grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) 1fr minmax(min-content, auto);
+		grid-template-areas: 
+			'. title title'
+			'. key .'
+			'. courses .'
+			'. info .';
+	}
+	
+	#key-map {
+		width: auto;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.courses > li {
+		min-width: 11rem;
+		min-height: 7rem;
+	}
+	
+	.courses > h2 {
+		padding: 0.5rem 1rem;
+		font-size: 1.6rem;
+	}
+
+	.courses > h3 {
+		padding: 0.5rem;
+		font-size: 1rem;
+	}
+	
+	#key-map p {
+		font-size: 1.2rem;
+	}
+	
+	#key-class {
+		max-width: 20rem;
+		margin: 0;
+	}
+
+
+	#key-prereq > b {
+		margin: 0;
+	}
+
+	#key-prereq > p {
+		margin: 0;
+	}
+
+	#key-credit > b {
+		margin: 0;
+	}
+
+	#key-credit > p {
+		margin: 0;
+	}
+
+	#key-coreq > b {
+		margin: 0;
+	}
+
+	#key-coreq > p {
+		margin: 0;
+	}
+	
+}
+
+@media only screen and (min-width: 1076px) and (max-width: 1270px) {
+	
+	.courses > li {
+		min-width: 11rem;
+		min-height: 7rem;
+		padding: 0.5rem;
+	}
+	
+	.curriculum-grid {
+		grid-template-columns: minmax(min-content, 1fr) minmax(auto, 105rem) 1fr;
+	}
+	
+	.courses > h2 {
+		padding: 0.5rem 1rem;
+		font-size: 1.6rem;
+	}
+
+	.courses > h3 {
+		padding: 0.5rem;
+		font-size: 1rem;
+	}
+	
+	#key-map {
+		font-size: 1.2rem;
+		margin: 8rem auto 0 auto;
+		max-height: max-content;
+		width: 17.5rem;
+	}
+
+}
+	
+@media only screen and (min-width: 1271px) {
+	
+	.curriculum-grid {
+		grid-template-columns: minmax(min-content, 1fr) minmax(auto, 115rem) 1fr;
+	}
+	
 }
