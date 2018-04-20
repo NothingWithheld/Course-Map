@@ -7,10 +7,10 @@ const infoDiv = document.getElementById('course-info');
 container.addEventListener('mouseover', highlightClasses);
 container.addEventListener('mouseout', dehighlightClasses);
 container.addEventListener('click', clickClass);
-container.addEventListener('mouseover', showInfoDiv);
+container.addEventListener('mouseover', showCourseAssests);
 container.addEventListener('mouseover', insertCourseInfo);
 container.addEventListener('mouseout', removeCourseInfo);
-document.querySelector('footer').addEventListener('mouseover', hideInfoDiv);
+document.querySelector('footer').addEventListener('mouseover', hideCourseAssessts);
 
 let prerequisites = {
 	'math--231' : ['math--221',],
@@ -142,12 +142,12 @@ function deleteCourseInfo() {
 
 function showCourseAssests() {
 	showInfoDiv();
-	showCourseKey();
+	showcaseCourseKey();
 }
 
 function hideCourseAssessts() {
 	hideInfoDiv();
-	hideCourseKey();
+	resetCourseKey();
 }
 
 function showInfoDiv() {
@@ -158,12 +158,12 @@ function hideInfoDiv() {
 	infoDiv.classList.add('hidden');
 }
 
-function showCourseKey() {
-	document.getElementById('key-map').classList.remove('hidden');
+function showcaseCourseKey() {
+	document.getElementById('key-map').classList.add('key-map--showcased');
 }
 
-function hideCourseKey() {
-	document.getElementById('key-map').classList.add('hidden');
+function resetCourseKey() {
+	document.getElementById('key-map').classList.remove('key-map--showcased');
 }
 
 function resetHold(event) {
