@@ -149,6 +149,11 @@ h1 {
 	100% {background-position: 0 200%}
 }
 
+@keyframes transparentbg {
+	0%   {background-color: transparent}
+	100% {background-color: transparent}
+}
+
 .key-map--showcased {
 	animation-name: showcase;
 	animation-duration: 2s;
@@ -164,6 +169,11 @@ h1 {
 	margin: 8rem auto 0 auto;
 	max-height: max-content;
 	width: 20rem;
+}
+
+.key-class--showcased {
+	animation-name: transparentbg;
+	animation-duration: 2s;
 }
 
 #key-class {
